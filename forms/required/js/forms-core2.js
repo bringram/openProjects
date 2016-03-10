@@ -537,7 +537,7 @@
                     //possible this is a Fieldset Array, just the way the schemas work :(
                     if(schema[x][0] && schema[x][0].type === 'Fieldset'){
                         for(var y in schema[x]){
-                            _fill(target[y], schema[x][y].elements, filters);
+                            _fill(target, schema[x][y].elements, filters);
                         }
 
                     //maybe a checkbox or multiselect, but only 1 element given

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<script>
+    function loadHelloWorldComponent(){
+        var s = document.createElement('script');
+        s.setAttribute("src","/dist/js/async.js");
+        document.body.appendChild(s);
+    }
+    function loadHelloWorldComponent2(){
+        var s = document.createElement('script');
+        s.setAttribute("src","/dist/js/async2.js");
+        document.body.appendChild(s);
+    }
+</script>
+
+<body>
+    <p th:text="'Hello, ' + ${name} + '!'" />
+
+    <div id="content"></div>
+
+    <p><b>React Component Below</b></p>
+    <div id="hello"></div>
+    <div id="world"></div>
+
+    <p><b>Hello World Component</b></p>
+    <div id="helloworld"></div>
+
+    <p>
+        <button onclick="loadHelloWorldComponent()">Async Load "HelloWorld" Component</button><br/>
+        <i>This will dynamically load "async.js" which has a dependency on "helloworld".  When async.js loads, it will load the "helloworld" dependency</i>
+    </p>
+
+    <p><b>Hello World Component Again</b></p>
+    <div id="helloworld2"></div>
+    <p>
+        <button onclick="loadHelloWorldComponent2()">Async Load "HelloWorld" Component Again</button><br/>
+        <i>Same as above, just want to make sure the "helloworld" does not load again.</i>
+    </p>
+
+</body>
+<script type="text/javascript" src="/dist/js/global.js" charset="utf-8"></script>
+<script type="text/javascript" src="/dist/js/main.js" charset="utf-8"></script>
+</html>

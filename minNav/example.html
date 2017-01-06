@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Min Nav</title>
+    <link rel="stylesheet" type="text/css" href="required/min-nav.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* set the min nav colors */
+        .m-nav{
+            background-color:#000;
+            color:#FFF;
+            border-color:#FFF;
+        }
+
+        #left-nav{
+            float:left;
+        }
+        #left-nav ul{
+            width:150px;
+        }
+        #content{
+            margin-left:200px;
+        }
+        @media (max-width: 500px) {
+            #content{
+                padding-top:20px;
+                margin-left:0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="m-nav m-nav-close">&#x2716;</div>
+<nav id="left-nav" class="m-nav" tabindex="-1" onclick="this.focus()">
+    <ul>
+        <li>Main
+            <ul>
+                <li>Example 1</li>
+                <li>Example 2</li>
+            </ul>
+        </li>
+        <li>Main
+            <ul>
+                <li>Example 1</li>
+                <li>Example 2</li>
+            </ul>
+        </li>
+    </ul>
+
+</nav>
+<div id="content">
+    <h2>Example Page</h2>
+    <p>
+        Here I am showing the default left navigation and making a right navigation.  You can add
+        the class name "m-nav-right" to pull the navigation to the right side.
+    </p>
+</div>
+</body>
+
+</html>

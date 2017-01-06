@@ -1,0 +1,64 @@
+/* min nav stuff */
+.m-nav-close{
+    font-size: 1.2em;
+    text-align: center;
+    z-index:1;
+    cursor:pointer;
+    display: none;
+}
+@media (max-width: 500px) {
+    .m-nav{
+        position:fixed;
+        top:0px;
+        left:0px;
+
+        height:34px;
+        max-height: 34px;
+        width:40px;
+        z-index:2;
+
+        overflow:hidden;
+        transition: max-height .8s;
+    }
+
+    .m-nav-close{
+        display:block;
+    }
+
+    .m-nav:focus{
+        z-index:0;
+    }
+    .m-nav:focus>ul::before{
+        display: none;
+    }
+
+    .m-nav>ul{
+        margin-top:34px;
+    }
+
+    .m-nav>ul::before {
+        border-bottom: 10px double;
+        border-top: 3px solid;
+        content: ' ';
+        height: 4px;
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        width: 20px;
+        cursor:pointer;
+    }
+    .m-nav.m-nav-right>ul::before{
+        right:9px;
+        left:auto;
+    }
+    .m-nav.m-nav-right{
+        left:auto;
+        right:0px;
+    }
+
+    nav.m-nav:focus{
+        height:auto;
+        max-height: 500px;
+        width:100%;
+    }
+}
